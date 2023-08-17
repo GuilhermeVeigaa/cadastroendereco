@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/jquery/jquery-3.7.0.min.js">
+    <link rel="stylesheet" href="assets/bootstrap-5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/CSS/index.css">
+
+    <script src="assets/boostrap-5.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/cep.js"></script>
+    
+
+    <title>Salvar endereco</title>
+
+</head>
+<body style="background-color: aliceblue;">
+  <div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">RadeStore</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#newnavbar" aria-controls="newnavbar" aria-expanded="false" aria-label="Toggle navegation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="newnavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" href="#" id="newnavbarlink"  data-bs-toggle="dropdown" aria-expanded="false">Departamentos</a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="newnavbarlink">
+                <li class="dropdown-item"><a href="#">Informática</a></li>
+                <li class="dropdown-item"><a href="#"></a>Casa</li>
+                <li class="dropdown-item"><a href="#"></a>Esportes</li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Ofertas do dia</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Mais vendidos</a>
+            </li>
+          </ul>
+
+          <form class="d-flex me-2 me-sm-1" style="width: 20rem; height: 2rem;">
+            <input type="text" class="form-control me-2 me-sm-1" style="border: 1px solid #333;" placeholder="Buscar...">
+            <button class="btn btn-primary rounded-3" style="display: flex ;align-items: center; justify-content: center; box-shadow: -1 -1 2 blue; font-weight: bold;" type="button">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <center>
+    <div>
+      <h1>Salvar endereco</h1>
+      <form>
+        <div class="row mb-3">
+            
+          <div class="form-floating col-12 col-sm-6 mb-6 mb-sm-0">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputname" name="nome" placeholder="Nome completo*" required>
+
+            <label for="inputname" class="form-label">Nome completo*</label>
+          </div>  
+
+          <div class="form-floating col-12 col-sm-6">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputcpf" name="cpf" placeholder="CPF*" required>
+
+            <label for="inputcpf" class="form-label">CPF</label>
+          </div>
+          
+        </div>
+
+        <div class="row mb-3">
+            
+          <div class="form-floating border-2">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputcep" name="cep" placeholder="CEP*" required>
+
+            <label for="inputcep" class="form-label">CEP*</label>
+          </div>  
+          
+        </div>
+
+        <div class="row mb-3">
+            
+          <div class="form-floating">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputadress" name="adress" placeholder="Endereco*" required>
+
+            <label for="inputadress" class="form-label">Endereco*</label>
+          </div>  
+          
+        </div>
+
+        <div class="row mb-3">
+            
+          <div class="form-floating">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputbairro" name="bairro" placeholder="Bairro*" required>
+
+            <label for="inputbairro" class="form-label">Bairro*</label>
+          </div>  
+          
+        </div>
+
+        <div class="row mb-3">
+            
+          <div class="form-floating col-12 col-sm-6 mb-6 mb-sm-0">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputnumber" name="numero" placeholder="Numero*" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');" maxlength="6" required>
+
+            <label for="inputnumber" class="form-label">Numero*</label>
+          </div>  
+
+          <div class="form-floating col-12 col-sm-6">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputcomplement" name="cpf" placeholder="Complemento (opcional)">
+
+            <label for="inputcomplement" class="form-label">Complemento (opcional)</label>
+          </div>      
+        </div>
+
+        <div class="row mb-3">
+          
+          <div class="form-floating col-12 col-sm-6 mb-6 mb-sm-0">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputcity" name="cidade" placeholder="Cidade*" disabled required>
+
+            <label for="inputcity" class="form-label">Cidade*</label>
+          </div>  
+
+          <div class="form-floating col-12 col-sm-6">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputstate" name="uf" placeholder="UF*" disabled required>
+
+            <label for="inputstate" class="form-label">UF*</label>
+          </div>
+        </div>
+
+        <div id="btn">
+          <button type="submit" class="btn btn-primary rounded-4" style="box-shadow: -1 -1 2 blue">Salvar</button>
+        </div>
+        
+      </form>
+    </div>
+  </center>
+
+  <footer class="mt-3">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item fw-bold">
+            <a class="nav-link" href="javascript:void(0)">Fale conosco</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Blabla</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Bla</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</body>
+
+<script>
+  $("#inputcpf").keypress(function() {
+    $(this).mask('000.000.000-00');
+  });
+
+  $("#inputcep").keypress(function() {
+    $(this).mask('00000-000');
+  });
+</script>
+</html>

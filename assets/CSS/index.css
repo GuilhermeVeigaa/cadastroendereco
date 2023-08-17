@@ -1,0 +1,38 @@
+h1 {
+    font-size: 2rem;
+    margin-top: 12px;
+}
+
+form {
+   margin-top: 1vh;
+   margin-left: 5vw;
+   margin-right: 5vw;
+   width: 45vw;
+   
+   
+}
+
+label {
+    margin-left: 0.8rem;
+}
+
+input {
+    background-color: white;
+}
+
+#btn {
+    padding-top: 0.4vw;
+}
+
+button {
+    width: 160px;
+    box-shadow: -1px 1px 1px #2856d6;
+}
+
+.btn-primary {
+    font-weight: bold;
+}
+
+.bg-dark {
+    background-color: rgba(0, 0, 0, 0.5);
+}

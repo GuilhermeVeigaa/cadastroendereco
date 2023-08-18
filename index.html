@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="assets/bootstrap-5.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/CSS/index.css">
 
+    <script src="assets/jquery/jquery-3.7.0.min.js"></script>
+    <script src="assets/jquery/jquery-1.14.16.mask.js"></script>
     <script src="assets/boostrap-5.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="assets/js/cep.js"></script>
+    <script src="assets/js/cpf.js"></script>
     
 
     <title>Salvar endereco</title>
 
 </head>
-<body style="background-color: aliceblue;">
+<body>
   <div>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
@@ -48,18 +48,36 @@
             </li>
           </ul>
 
-          <form class="d-flex me-2 me-sm-1" style="width: 20rem; height: 2rem;">
-            <input type="text" class="form-control me-2 me-sm-1" style="border: 1px solid #333;" placeholder="Buscar...">
-            <button class="btn btn-primary rounded-3" style="display: flex ;align-items: center; justify-content: center; box-shadow: -1 -1 2 blue; font-weight: bold;" type="button">Buscar</button>
+          <form class="d-flex me-2 me-sm-1" id="formNav">
+            <input type="text" class="form-control me-2 me-sm-1" id="inputNav" placeholder="Buscar...">
+            <button id="btnNav" class="btn btn-primary rounded-3" type="button">Buscar</button>
           </form>
         </div>
       </div>
     </nav>
   </div>
-  <center>
-    <div>
-      <h1>Salvar endereco</h1>
-      <form>
+
+    <div class="container-fluid" id="main">
+
+      <div class="modal fade" id="modalCpf" tabindex="-1" aria-labelledby="modalCpfLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalCpfLabel">CPF invalido</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Por favor insira um CPF valido</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form id="formMain">
+        <h1 id="titleMain">Salvar endereco</h1>
         <div class="row mb-3">
             
           <div class="form-floating col-12 col-sm-6 mb-6 mb-sm-0">
@@ -69,7 +87,7 @@
           </div>  
 
           <div class="form-floating col-12 col-sm-6">
-            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputcpf" name="cpf" placeholder="CPF*" required>
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputcpf" name="cpf" placeholder="CPF*" maxlength="11" minlength="11" required>
 
             <label for="inputcpf" class="form-label">CPF</label>
           </div>
@@ -115,7 +133,7 @@
           </div>  
 
           <div class="form-floating col-12 col-sm-6">
-            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputcomplement" name="cpf" placeholder="Complemento (opcional)">
+            <input type="text" class="form-control shadow-none border-secondary border-2" id="inputcomplement" name="complemento" placeholder="Complemento (opcional)">
 
             <label for="inputcomplement" class="form-label">Complemento (opcional)</label>
           </div>      
@@ -136,33 +154,34 @@
           </div>
         </div>
 
-        <div id="btn">
-          <button type="submit" class="btn btn-primary rounded-4" style="box-shadow: -1 -1 2 blue">Salvar</button>
+        <div>
+          <button type="submit" class="btn btn-primary rounded-4" id="btnSalvar">Salvar</button>
         </div>
         
       </form>
     </div>
-  </center>
 
-  <footer class="mt-3">
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <ul class="navbar-nav">
-          <li class="nav-item fw-bold">
-            <a class="nav-link" href="javascript:void(0)">Fale conosco</a>
-          </li>
+  <div>
+    <footer class="mt-3" id="footer">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item fw-bold">
+              <a class="nav-link" href="javascript:void(0)">Fale conosco</a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Blabla</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Blabla</a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Bla</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </footer>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Bla</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  </div>
 </body>
 
 <script>

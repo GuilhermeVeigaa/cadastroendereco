@@ -24,7 +24,7 @@ $(document).ready(function() {
 
             //return true if value is expected 
             if ((v[0] != cpf[9]) || (v[1] != cpf[10])) {
-                alert("CPF inválido")
+                $('#modalCpf').modal('show');
                 $(cpf_field).val("")
                 $(cpf_field).focus()
             } else {

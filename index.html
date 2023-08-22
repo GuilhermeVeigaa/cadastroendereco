@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/jquery/jquery-3.7.0.min.js">
     <link rel="stylesheet" href="assets/bootstrap-5.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/CSS/index.css">
 
     <script src="assets/jquery/jquery-3.7.0.min.js"></script>
     <script src="assets/jquery/jquery-1.14.16.mask.js"></script>
-    <script src="assets/boostrap-5.3.1/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-5.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/cep.js"></script>
     <script src="assets/js/cpf.js"></script>
     
-
     <title>Salvar endereco</title>
 
 </head>
@@ -33,9 +31,9 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" role="button" href="#" id="newnavbarlink"  data-bs-toggle="dropdown" aria-expanded="false">Departamentos</a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="newnavbarlink">
-                <li class="dropdown-item"><a href="#">Informática</a></li>
-                <li class="dropdown-item"><a href="#"></a>Casa</li>
-                <li class="dropdown-item"><a href="#"></a>Esportes</li>
+                <li class="dropdown-item"><a href="#" id="linkdropdown">Informática</a></li>
+                <li class="dropdown-item"><a href="#" id="linkdropdown">Casa</a></li>
+                <li class="dropdown-item"><a href="#" id="linkdropdown">Esportes</a></li>
               </ul>
             </li>
 
@@ -63,14 +61,14 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalCpfLabel">CPF invalido</h5>
+              <h5 class="modal-title" id="modalCpfLabel">CPF inválido</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <p>Por favor insira um CPF valido</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
             </div>
           </div>
         </div>

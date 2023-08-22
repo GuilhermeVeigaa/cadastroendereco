@@ -28,6 +28,12 @@ body {
     height: 2rem;
 }
 
+
+#linkdropdown {
+    text-decoration: none;
+    color: white;
+}
+
 label {
     margin-left: 0.8rem;
 }

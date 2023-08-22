@@ -34,4 +34,3 @@ $(document).ready(function() {
     });
 });
 
-console.log(cpf[13])
